@@ -21,7 +21,12 @@ Saves postal code documents in MongoDB using [geospatial indexes](http://www.mon
 Example (be sure to npm install the dependencies listed under "NPM Dependencies" first):
 
 <pre><code>
-node test/load-geonames.js --file ~/data/geonames/IN/IN.txt --config ./local.config.js
+java -cp mongo-java-driver-3.3.0.jar;. PinCodesUtility
+</code></pre>
+
+To rerun the load delete the collection first
+<pre><code>
+db.postal_codes.drop()
 </code></pre>
 
 ## Querying Postal Codes by Source Zipcode and Radius
