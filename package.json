@@ -1,0 +1,36 @@
+{
+  "author": {
+    "name": "Chris Bumgardner",
+    "email": "cbumgard@gmail.com"
+  },
+  "contributors": [
+    {
+      "name": "Chris Bumgardner",
+      "email": "cbumgard@gmail.com"
+    },
+    {
+      "name": "Misha Bosin",
+      "email": "misha.bosin@gmail.com"
+    }
+  ],
+  "name": "mongo-postal",
+  "description": "A node.js module that both creates a MongoDB collection of INDIA postal codes and provides geo-spatial searching on them given a source zipcode and radius.",
+  "version": "0.0.4",
+  "homepage": "https://github.com/asnreddy/nnjs-mdb-pin.git",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:asnreddy/nnjs-mdb-pin.git"
+  },
+  "dependencies": {
+    "csv": "0.0.x",
+    "mongodb": "^2.2.10",
+    "mongoskin": "^2.1.0",
+    "optimist": "^0.6.1",
+    "step": "*"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": ">= v0.6.11"
+  }
+}
