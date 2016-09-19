@@ -2,10 +2,6 @@
 
 A node.js module that both creates a MongoDB collection of INDIA postal codes and provides geo-spatial searching on them given a source zipcode and radius. Based on the Geonames database [www.geonames.org](http://www.geonames.org) which is licensed under a Creative Commons Attribution 3.0 License.
 
-## License
-Copyright (c) 2012 Chris Bumgardner and Misha Bosin
-
-This content is released under the MIT License [here](https://github.com/cbumgard/node-mongo-postal/blob/master/LICENSE)
 
 ## Download Geonames Postal Codes for the INDIA
 [http://download.geonames.org/export/zip/IN.zip](http://download.geonames.org/export/zip/IN.zip)
@@ -36,7 +32,7 @@ db.postal_codes.drop()
 This test searches for the 10 closest postal objects within a 4 mile radius of zipcode 744201:
 
 <pre><code>
-node test/test-find-query.js -c ./local.config.js -z 744201 -r 1
+node test/test-find-query.js -c ./config.js -z 744201 -r 1
 Using MongoDB settings in configuration file: ./config.js
 Found: {"_id":"57dbc2c5a325c613fc7c5718","country":"IN","zipcode":"744203","city":"Long Island","state_long":"Andaman & Nicobar Islands","state_short":"01","loc":[92.8794,12.6435]}
 Found: {"_id":"57dbc2c5a325c613fc7c5719","country":"IN","zipcode":"744204","city":"Mayabander","state_long":"Andaman & Nicobar Islands","state_short":"01","loc":[92.8794,12.6435]}
@@ -58,7 +54,19 @@ Found 16 postals
 </code></pre>
 
 ### Node.js API
-todo
+start server using
+
+<pre><code>
+node server
+</code></pre>
+
+Acess the REST API using the following syntax
+http://localhost:5000/pinsearch/:zipcode/:radius/:limit
+
+examples:
+http://localhost:5000/pinsearch/500032
+http://localhost:5000/pinsearch/500032/1
+http://localhost:5000/pinsearch/500032/1/3
 
 ## NPM Dependencies
 
