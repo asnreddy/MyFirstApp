@@ -1,0 +1,44 @@
+<!doctype html>
+<html ng-app="pinsearch">
+  <head>
+    <script src="js/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-resource.min.js">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js">
+   </script>   
+    <script src="js/pinsearch.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  </head>
+  <body>
+  <div class="container">
+    <h2>Pincode Search</h2>
+    <div ng-controller="PinSearchCtrl">
+    <form>
+    <div class="form-group">
+    <label for="zipcode" >Pincode <input id="zipcode" class="form-control" type="text" ng-model="zipcode"/> </label>
+    </div>
+    <div class="form-group">
+    <label for="radius" >Radius(meters) <input id="radius" class="form-control" type="text" ng-model="radius"/> </label>
+    </div>
+    <button ng-click="search()">Search</button>
+ 
+    </form>
+    <h2>Results:</h2>
+    <table class="table table-hover">
+     <tr>
+	    <th>zipcode </th>
+	    <th>city </th>
+	    <th>state</th>
+	    <th>distance</th>
+	  </tr>
+	  <tr ng-repeat="pincode in pincodelist">
+	    <td>{{ pincode.zipcode }}</td>
+	    <td>{{ pincode.city  }}</td>
+	    <td>{{ pincode.state_long  }}</td>
+	    <td>{{ pincode.distance  }}</td>
+	  </tr>
+	</table>
+    </div>
+    </div>
+  </body>
+</html>

@@ -1,5 +1,5 @@
 var express = require('express'),
-    pinsearch = require('./lib/mongo-postal'),
+    pinsearch = require('./lib/postal-search'),
     app = express();
 
 app.use(express.static('www'));

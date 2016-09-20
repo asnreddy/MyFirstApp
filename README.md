@@ -1,4 +1,4 @@
-# mongo-postal
+# pincode-search
 
 A node.js module that both creates a MongoDB collection of INDIA postal codes and provides geo-spatial searching on them given a source zipcode and radius. Based on the Geonames database [www.geonames.org](http://www.geonames.org) which is licensed under a Creative Commons Attribution 3.0 License.
 
@@ -62,24 +62,24 @@ start server using
 node server
 </code></pre>
 
-Acess the REST API using the following syntax
-http://localhost:5000/pinsearch/:zipcode/:radius/:limit
-<pre><code>
+Access the REST API using the following syntax
+http://localhost:5000/pinsearch/:zipcode/:radius
+
 Note: radius is in meters
 
+<pre><code>
 examples:
 http://localhost:5000/pinsearch/500032
-http://localhost:5000/pinsearch/500032/1
-http://localhost:5000/pinsearch/500032/1/3
+http://localhost:5000/pinsearch/500032/1000
 </code></pre>
+
+
+UI Access:
+<pre><code>
+http://localhost:5000/index.html
+</code></pre>
+
 ## NPM Dependencies
 * express
 * mongoskin
-* optimist (for test/load-geonames.js only)
-* csv (for test/load-geonames.js only)
 
-## NPM Usage
-
-<pre><code>
-npm install mongo-postal
-</code></pre>

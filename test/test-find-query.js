@@ -12,7 +12,7 @@ var argv = require('optimist')
 ;
 
 // Initialize a connection to MongoDB:
-var mongoPostal = require('../lib/mongo-postal');
+var mongoPostal = require('../lib/postal-search');
 console.log("Using MongoDB settings in configuration file: %s", argv.config);
 var fs = require('fs');
 var config = JSON.parse(fs.readFileSync(argv.config, 'utf-8'));

@@ -7,9 +7,13 @@
     {
       "name": "kiran",
       "email": "kijini@gmail.com"
+    },
+    {
+      "name": "shankar",
+      "email": "shankar.arvapally@gmail.com"
     }
   ],
-  "name": "mongo-postal",
+  "name": "pincode-search",
   "description": "A node.js module that both creates a MongoDB collection of INDIA postal codes and provides geo-spatial searching on them given a source zipcode and radius.",
   "version": "0.0.1",
   "homepage": "https://github.com/asnreddy/MyFirstRESTApp.git",
@@ -23,7 +27,8 @@
     "mongoskin": "^2.1.0",
     "optimist": "^0.6.1",
     "step": "*",
-    "express": "~4.4.3"
+    "express": "~4.4.3",
+    "angular":"*"
   },
   "devDependencies": {},
   "optionalDependencies": {},

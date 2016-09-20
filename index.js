@@ -1,1 +1,1 @@
-module.exports = require('./lib/mongo-postal');
+module.exports = require('./lib/postal-search');
