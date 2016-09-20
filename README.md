@@ -6,6 +6,8 @@ A node.js module that both creates a MongoDB collection of INDIA postal codes an
 ## Download Geonames Postal Codes for the INDIA
 [http://download.geonames.org/export/zip/IN.zip](http://download.geonames.org/export/zip/IN.zip)
 
+Replace any multiple tabs between fields with single tab in the IN.txt file. This would prevent data load failures.
+
 ## Configuration
 
 I recommend creating a copy of config.js called local.config.js and adding it to your .gitignore so your MongoDB configuration settings do not get persisted in git.
@@ -17,7 +19,7 @@ Saves postal code documents in MongoDB using [geospatial indexes](http://www.mon
 Example (be sure to npm install the dependencies listed under "NPM Dependencies" first):
 
 <pre><code>
-java -cp mongo-java-driver-3.3.0.jar;. PinCodesUtility
+java -cp mongo-java-driver-3.3.0.jar;. com.test.PinCodesUtility
 </code></pre>
 
 To rerun the load delete the collection first
@@ -62,14 +64,16 @@ node server
 
 Acess the REST API using the following syntax
 http://localhost:5000/pinsearch/:zipcode/:radius/:limit
+<pre><code>
+Note: radius is in meters
 
 examples:
 http://localhost:5000/pinsearch/500032
 http://localhost:5000/pinsearch/500032/1
 http://localhost:5000/pinsearch/500032/1/3
-
+</code></pre>
 ## NPM Dependencies
-
+* express
 * mongoskin
 * optimist (for test/load-geonames.js only)
 * csv (for test/load-geonames.js only)
