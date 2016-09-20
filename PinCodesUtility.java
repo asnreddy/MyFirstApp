@@ -1,3 +1,4 @@
+package com.test;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -16,7 +17,7 @@ import com.mongodb.ServerAddress;
 
 public class PinCodesUtility {
 	
-	private static final String FILE_PATH = "C:\\pincode\\IN.txt";
+	private static final String FILE_PATH = "D:\\WMSI\\Documents\\pincode\\IN.txt";
 	public static final String USER_NAME = "";
 	public static final String PASSWORD = "";
 	public static final String DB_NAME = "geonames";
@@ -45,7 +46,7 @@ public class PinCodesUtility {
 			DBCollection coll = db.createCollection("postal_codes", new BasicDBObject());
 			try{
 				DBObject zipcodeindx = BasicDBObjectBuilder.start("zipcode", 1).get();
-				DBObject locindx = BasicDBObjectBuilder.start("loc", "2d").get();
+				DBObject locindx = BasicDBObjectBuilder.start("geometry", "2dsphere").get();
 				System.out.println("Ensuring index on zipcode");
 				coll.createIndex(zipcodeindx);
 				System.out.println("Ensuring 2d geospatial index on loc");
@@ -65,11 +66,15 @@ public class PinCodesUtility {
 					document.put("state_long", values[3]);
 					document.put("state_short", values[4]);
 					
+					BasicDBObject geometryDoc = new BasicDBObject();
+					geometryDoc.put("type","Point");
 					BasicDBList loc = new BasicDBList();
 					loc.add(Float.parseFloat(values[9]));
 					loc.add(Float.parseFloat(values[8]));
 					
-					document.put("loc", loc);
+					geometryDoc.put("coordinates", loc);
+					
+					document.put("geometry", geometryDoc);
 					coll.insert(document);
 			    }
 
