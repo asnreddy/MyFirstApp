@@ -1,6 +1,6 @@
 # pincode-search
 
-A node.js module that both creates a MongoDB collection of INDIA postal codes and provides geo-spatial searching on them given a source zipcode and radius. Based on the Geonames database [www.geonames.org](http://www.geonames.org) which is licensed under a Creative Commons Attribution 3.0 License.
+A MEAN web application that both creates a MongoDB collection of INDIA postal codes and provides geo-spatial searching on them given a source pincode and radius. Based on the Geonames database [www.geonames.org](http://www.geonames.org) which is licensed under a Creative Commons Attribution 3.0 License.
 
 
 ## Download Geonames Postal Codes for the INDIA
@@ -27,11 +27,11 @@ To rerun the load delete the collection first
 db.postal_codes.drop()
 </code></pre>
 
-## Querying Postal Codes by Source Zipcode and Radius
+## Querying Postal Codes by Source Pincode and Radius
 
 ### Command-Line
 
-This test searches for the 10 closest postal objects within a 4 mile radius of zipcode 744201:
+This test searches for the 10 closest postal objects within a 4 mile radius of pincode 744201:
 
 <pre><code>
 node test/test-find-query.js -c ./config.js -z 744201 -r 1
@@ -63,7 +63,7 @@ node server
 </code></pre>
 
 Access the REST API using the following syntax
-http://localhost:5000/pinsearch/:zipcode/:radius
+http://localhost:5000/pinsearch/:pincode/:radius
 
 Note: radius is in meters
 
