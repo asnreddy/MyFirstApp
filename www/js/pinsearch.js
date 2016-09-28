@@ -14,6 +14,11 @@ pinApp.controller("PinSearchCtrl", [ '$scope', '$resource','PINCode',
        					}
        				);
        			};
+       			$scope.openCoordinates = function(coordniates){
+       				console.log("coordniates"+ coordniates);
+       				window.open('http://maps.google.com/maps?q='+coordniates[1]+','+coordniates[0]);
+       			};
+       			
        		} ]);
 
 pinApp.factory('PINCode', function ($resource) {

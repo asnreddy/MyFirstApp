@@ -30,14 +30,16 @@
 	    <th>City </th>
 	    <th>State</th>
 	    <th>Distance</th>
-	    <th>Coordinates</th>
+	    <th>Coordinates (Latitude, Longitude)</th>
 	  </tr>
 	  <tr ng-repeat="pincode in pincodelist">
 	    <td>{{ pincode.zipcode }}</td>
 	    <td>{{ pincode.city  }}</td>
 	    <td>{{ pincode.state_long  }}</td>
 	    <td>{{ pincode.distance  }}</td>
-	    <td>{{ pincode.geometry.coordinates  }}</td>
+	    <td>[{{ pincode.geometry.coordinates[1]  }}, {{ pincode.geometry.coordinates[0]  }}]
+	    	<a ng-click="openCoordinates(pincode.geometry.coordinates)">click</a>
+	    </td>
 	  </tr>
 	</table>
     </div>
