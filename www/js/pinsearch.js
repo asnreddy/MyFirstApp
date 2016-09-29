@@ -8,6 +8,7 @@ pinApp.controller("PinSearchCtrl", [ '$scope', '$resource','PINCode',
        			$scope.zipcode = 500032;
        			$scope.radius = 1000;
        			$scope.search = function(){
+       				$scope.pincodelist = {};
        				PINCode.query({}, {zipcode:$scope.zipcode,radius:$scope.radius}, 
        					function(pincodes){
        						$scope.pincodelist = pincodes;

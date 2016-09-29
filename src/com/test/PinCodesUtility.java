@@ -17,7 +17,7 @@ import com.mongodb.ServerAddress;
 
 public class PinCodesUtility {
 	
-	private static final String FILE_PATH = "C:\\Users\\dt81797\\Downloads\\IN.txt";
+	private static final String FILE_PATH = "C:\\dev\\pincode\\MyFirstApp\\IN.txt";
 	public static final String USER_NAME = "";
 	public static final String PASSWORD = "";
 	public static final String DB_NAME = "geonames";

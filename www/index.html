@@ -15,10 +15,10 @@
     <div ng-controller="PinSearchCtrl">
     <form>
     <div class="form-group">
-    <label for="zipcode" >Pincode <input id="zipcode" class="form-control" type="text" ng-model="zipcode"/> </label>
+    <label for="zipcode" >Pincode <input id="zipcode" class="form-control" type="number" ng-model="zipcode"/> </label>
     </div>
     <div class="form-group">
-    <label for="radius" >Radius(meters) <input id="radius" class="form-control" type="text" ng-model="radius"/> </label>
+    <label for="radius" >Radius(meters) <input id="radius" class="form-control" type="number" ng-model="radius"/> </label>
     </div>
     <button ng-click="search()">Search</button>
  
@@ -38,7 +38,7 @@
 	    <td>{{ pincode.state_long  }}</td>
 	    <td>{{ pincode.distance  }}</td>
 	    <td>[{{ pincode.geometry.coordinates[1]  }}, {{ pincode.geometry.coordinates[0]  }}]
-	    	<a ng-click="openCoordinates(pincode.geometry.coordinates)">click</a>
+	    	<a ng-click="openCoordinates(pincode.geometry.coordinates)" style="cursor: pointer;">click</a>
 	    </td>
 	  </tr>
 	</table>
